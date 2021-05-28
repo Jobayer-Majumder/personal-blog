@@ -21,7 +21,7 @@ const Header = () => {
                             <a class="nav-link me-3 fw-bold" href="#">Features</a>
                             <a class="nav-link me-3 fw-bold" href="#">Pricing</a>
                             <Link to='/login'>
-                                <button className="btn btn-outline-danger fw-bold">Login</button>
+                                <button className={`fw-bold btnBrand`}>Login</button>
                             </Link>
                         </div>
                     </div>
