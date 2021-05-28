@@ -3,6 +3,7 @@
 First time ->
 
 git clone https://github.com/pritom-dip/react-blog.git
+git checkout develop
 git checkout -b tahmid/jobayer ->first time only
 
 
