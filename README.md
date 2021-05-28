@@ -3,7 +3,10 @@
 First time ->
 
 git clone https://github.com/pritom-dip/react-blog.git
-git checkout -b tahmid/jobayer
+git checkout -b tahmid/jobayer ->first time only
+
+
+
 git add .
 git commit -m "commit_name"
 git fetch && git pull origin develop
