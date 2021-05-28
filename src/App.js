@@ -1,10 +1,12 @@
 import './App.css';
 import { Suspense } from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes/routes";
 
 const Loading = () => {
-  <h1>Loading.</h1>
+  return(
+    <h1>Loading.</h1>
+  )
 }
 
 function App() {
