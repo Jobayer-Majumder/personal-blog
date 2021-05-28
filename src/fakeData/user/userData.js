@@ -1,4 +1,4 @@
-export default userData = [
+export const userData = [
     {
         id: 1,
         email: 'blogger@gmail.com',
