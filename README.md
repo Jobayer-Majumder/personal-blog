@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
-First time
+First time ->
 
-git clone 
+git clone https://github.com/pritom-dip/react-blog.git
+git checkout -b tahmid/jobayer
+git add .
+git commit -m "commit_name"
+git fetch && git pull origin develop
+git push origin tahmid/jobayer 
