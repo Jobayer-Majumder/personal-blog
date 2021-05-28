@@ -11,4 +11,4 @@ git checkout -b tahmid/jobayer ->first time only
 git add .
 git commit -m "commit_name"
 git fetch && git pull origin develop
-git push origin tahmid/jobayer 
+git push origin tahmid/jobayer
