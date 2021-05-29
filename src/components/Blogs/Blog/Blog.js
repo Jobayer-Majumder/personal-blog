@@ -2,10 +2,22 @@ import React from 'react';
 import styles from './Blog.module.css';
 import { GrLike } from 'react-icons/gr';
 import { GoComment } from 'react-icons/go';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toogleLike } from '../../../store/actions/BlogActions';
 
 const Blog = ({ blog, view }) => {
-    const { author, img, title, desc, comments, like } = blog;
-    console.log('from blog', view)
+    const { id, author, img, title, desc, comments, like } = blog;
+    const user = useSelector(state => state.user.user);
+
+    const dispatch = useDispatch();
+
+    const handleLikeBtn = blogId => {
+        dispatch(toogleLike({
+            id: user.id,
+            blogId: blogId
+        }));
+    }
 
     return (
         <>
@@ -17,21 +29,21 @@ const Blog = ({ blog, view }) => {
                             <h6>{author}</h6>
                             {/* <h6>{new Date()}</h6> */}
                         </div>
-                        <h4 className="card-title">{title}</h4>
+                        <Link to={`/blog/${id}`}><h4 className="card-title">{title}</h4></Link>
                         <p className="card-text">{desc}</p>
                     </div>
                     <div className={`card-footer d-flex justify-content-around p-3 ${styles.borderNone}`}>
                         <div className="like">
-                            <button title='Like' className={`${styles.likeBtn} me-2`}>
+                            <button onClick={() => handleLikeBtn(id)} title='Like' className={`${styles.likeBtn} me-2`}>
                                 <GrLike className='fs-4' />
                             </button>
-                            <span class="fs-5">{like.length}</span>
+                            <span className="fs-5">{like.length}</span>
                         </div>
                         <div className="comment">
                             <button title='Leave Comment' className={`${styles.likeBtn} me-2`}>
                                 <GoComment className='fs-4' />
                             </button>
-                            <span class="fs-5">{like.length}</span>
+                            <span className="fs-5">{comments.length}</span>
                         </div>
                     </div>
                 </div>

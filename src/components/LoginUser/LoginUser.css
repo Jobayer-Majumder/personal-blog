@@ -1,26 +1,23 @@
+.full{
+  height: 100vh;
+  background: linear-gradient(to bottom, #f4f4f4, #f1f1f1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
-  
   .Logincontainer {
     background: linear-gradient(to bottom, #f4f4f4, #f1f1f1);
-
     height: 800px;
     width: 600px;
     display: grid;
     font-family: "poppins", Arial, Helvetica, sans-serif;
     place-items: center;
-    margin-top: 80px;
-
-    height: 100vh;
     display: grid;
-    font-family: "poppins", Arial, Helvetica, sans-serif;
     place-items: center;
-
   }
   
-  
-  
+
   .logincard {
     display: flex;
     flex-direction: column;
