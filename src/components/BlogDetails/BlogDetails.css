@@ -1,0 +1,27 @@
+/* .cart{
+    margin: auto;
+    width: 50%
+} */
+.card-img-top{
+    width: 100%;
+
+}
+.comment-input{
+    width: 600px !important;
+}
+.input-group input{
+    width: 1000px;
+    height: 50px;
+    margin-bottom: 40px;
+    border: 1px solid gray;
+    border-radius: 15px
+}
+.button{
+    width: 200px ;
+    height: 40px;
+    background-image: linear-gradient(45deg, #ff5271, #ffa086);
+    border: transparent;
+    /* border-radius: 15px; */
+
+    
+}

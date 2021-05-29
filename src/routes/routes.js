@@ -2,6 +2,7 @@ import { lazy } from "react"
 
 const Home = lazy(() => import('../pages/Home.page'));
 const Login = lazy(() => import('../pages/Login.page'));
+const BlogDetails = lazy(() => import('../pages/BlogData.page.jsx'));
 
 const routes = [
     {
@@ -16,6 +17,13 @@ const routes = [
         path: '/login',
         exact: true,
         component: Login,
+        authentication: false
+    },
+    {
+        name: 'Post',
+        path: '/post',
+        exact: true,
+        component: BlogDetails,
         authentication: false
     },
 ];
