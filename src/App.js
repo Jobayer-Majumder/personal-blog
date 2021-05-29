@@ -1,16 +1,24 @@
 import './App.css';
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes/routes";
+import { useDispatch } from 'react-redux';
+import { isLoggedIn } from './store/actions/UserActions';
 
 const Loading = () => {
-  return(
-
+  return (
     <h1>Loading.</h1>
   )
 }
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(isLoggedIn())
+  }, [])
+
   return (
     <Suspense fallback={<Loading />}>
       <Router>

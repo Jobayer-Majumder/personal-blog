@@ -13,6 +13,13 @@ const routes = [
         authentication: false
     },
     {
+        name: 'Home',
+        path: '/home',
+        exact: true,
+        component: Home,
+        authentication: false
+    },
+    {
         name: 'Login',
         path: '/login',
         exact: true,
@@ -21,7 +28,7 @@ const routes = [
     },
     {
         name: 'Post',
-        path: '/post',
+        path: '/blog/:id',
         exact: true,
         component: BlogDetails,
         authentication: false

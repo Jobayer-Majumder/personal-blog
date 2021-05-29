@@ -15,15 +15,11 @@ const blogsData = [
         publishDate: new Date(),
         comments: [
             {
-                id: 1,
-                name: 'example',
-                img: '',
+                userId: 1,
                 comment: ''
             },
             {
-                id: 2,
-                name: 'example',
-                img: '',
+                userId: 1,
                 comment: ''
             }
         ],
@@ -39,6 +35,16 @@ const blogsData = [
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
         publishDate: new Date(),
+        comments: [
+            {
+                userId: 1,
+                comment: ''
+            },
+            {
+                userId: 1,
+                comment: ''
+            }
+        ],
         like: [
             1, 2, 3, 4
         ]
@@ -50,6 +56,16 @@ const blogsData = [
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
         publishDate: new Date(),
+        comments: [
+            {
+                userId: 1,
+                comment: ''
+            },
+            {
+                userId: 1,
+                comment: ''
+            }
+        ],
         like: [
             1, 2, 3, 4
         ]
@@ -61,26 +77,56 @@ const blogsData = [
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
         publishDate: new Date(),
+        comments: [
+            {
+                userId: 1,
+                comment: ''
+            },
+            {
+                userId: 1,
+                comment: ''
+            }
+        ],
         like: [
             1, 2, 3, 4
         ]
-    },{
+    }, {
         id: 5,
         author: 'example5',
         img: img5,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
         publishDate: new Date(),
+        comments: [
+            {
+                userId: 1,
+                comment: ''
+            },
+            {
+                userId: 1,
+                comment: ''
+            }
+        ],
         like: [
             1, 2, 3, 4
         ]
-    },{
+    }, {
         id: 6,
         author: 'example6',
         img: img3,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
         publishDate: new Date(),
+        comments: [
+            {
+                userId: 1,
+                comment: ''
+            },
+            {
+                userId: 1,
+                comment: ''
+            }
+        ],
         like: [
             1, 2, 3, 4
         ]

@@ -1,68 +1,47 @@
 import React, { useState } from 'react';
-import userData from '../../fakeData/user/userData';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useForm } from "react-hook-form";
 import './LoginUser.css';
+import { userLogin } from '../../store/actions/UserActions';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const LoginUser = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const user = useSelector(state => state.user.user);
+    const dispatch = useDispatch();
 
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
+    const onSubmit = (data) => {
 
-    console.log(userData);
-
-    const [loggedInInfo, setLoggedInInfo] = useState({
-        email: '',
-        password: '',
-        role: ''
-    })
-    const handleBlur = (e) => {
-        if (e.target.id === 'email') {
-            const userNew = { ...loggedInInfo }
-            userNew['email'] = e.target.value
-            setLoggedInInfo(userNew)
-
+        const res = dispatch(userLogin(data));
+        if (user.email == data.email) {
+            history.replace(from);
         }
-        if (e.target.id === 'password') {
-            const userNew = { ...loggedInInfo }
-            userNew['password'] = e.target.value
-            setLoggedInInfo(userNew)
-        }
-
-
     }
-    const handleSubmit = (e) => {
-        userData.map(user => {
-            if (user.email === loggedInInfo.email) {
-                console.log(`userNameVerified`);
-                if (user.password === loggedInInfo.password) {
-                    console.log(`password Verified`);
-                    loggedInInfo.role = user.type
-                }
-            }
-        })
-        console.log(loggedInInfo);
-        e.preventDefault()
-    }
-
 
     return (
-
-
-        <div class="Logincontainer">
-            <div class="logincard">
-                <h1 class="card-title">Hello Again!</h1>
-                <small class="card-subtitle">Enter your credentials and get access</small>
-                <form onSubmit={handleSubmit} class="card-form">
-                    <label for="username">Username</label>
-                    <div class="card-input-container username">
-                        <input onBlur={handleBlur} type="text" placeholder="Enter your username" id="email" />
-
-                    </div>
-                    <label for="password">Password</label>
-                    <div class="card-input-container password">
-                        <input onBlur={handleBlur} type="password" placeholder="Enter your password" id="password" />
-                    </div>
-                    <button class="card-button">Sign In</button>
-                    <small class="card-forgot-password">Forgot your passwrod ? <a>Reset Password</a></small>
-                </form>
+        <div className="full">
+            <div className="Logincontainer">
+                <div className="logincard">
+                    <h1 className="card-title">Sign In Here!</h1>
+                    <small className="card-subtitle">Enter your credentials and get access</small>
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-form">
+                        <label htmlFor="username">Email</label>
+                        <div className="card-input-container username">
+                            <input {...register("email", { required: true })} type="email" placeholder="Enter your email" id="email" />
+                            {errors.email && <span className="text-danger">Email is required</span>}
+                        </div>
+                        <label htmlFor="password">Password</label>
+                        <div className="card-input-container password">
+                            <input {...register("password", { required: true })} type="password" placeholder="Enter your password" id="password" />
+                            {errors.password && <span className="text-danger">Password is required</span>}
+                        </div>
+                        <button className="card-button">Sign In</button>
+                        {/* <small className="card-forgot-password">Forgot your passwrod</small> */}
+                    </form>
+                </div>
             </div>
         </div>
 

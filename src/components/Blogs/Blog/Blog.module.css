@@ -1,6 +1,7 @@
 .borderNone{
     border: none;
     background: none;
+    overflow: hidden;
 }
 .cardImg{
     transition: 0.5s linear;
