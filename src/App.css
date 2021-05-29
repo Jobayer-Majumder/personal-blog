@@ -1,3 +1,9 @@
+.brandColor{
+  color: #FF5973;
+}
+.brandBg{
+  background-color: #FF5973;
+}
 .btnBrand{
   padding: 8px 20px;
   color: white;

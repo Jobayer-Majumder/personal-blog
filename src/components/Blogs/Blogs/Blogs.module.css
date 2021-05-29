@@ -1,0 +1,4 @@
+.listView{
+    display: flex;
+    flex-direction: column;
+}
