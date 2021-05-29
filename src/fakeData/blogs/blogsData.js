@@ -38,7 +38,10 @@ const blogsData = [
         img: img2,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
-        publishDate: new Date()
+        publishDate: new Date(),
+        like: [
+            1, 2, 3, 4
+        ]
     },
     {
         id: 3,
@@ -46,7 +49,10 @@ const blogsData = [
         img: img3,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
-        publishDate: new Date()
+        publishDate: new Date(),
+        like: [
+            1, 2, 3, 4
+        ]
     },
     {
         id: 4,
@@ -54,21 +60,30 @@ const blogsData = [
         img: img4,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
-        publishDate: new Date()
+        publishDate: new Date(),
+        like: [
+            1, 2, 3, 4
+        ]
     },{
         id: 5,
         author: 'example5',
         img: img5,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
-        publishDate: new Date()
+        publishDate: new Date(),
+        like: [
+            1, 2, 3, 4
+        ]
     },{
         id: 6,
         author: 'example6',
         img: img3,
         title: 'Most Important Thing You Need To Know',
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, asperiores!',
-        publishDate: new Date()
+        publishDate: new Date(),
+        like: [
+            1, 2, 3, 4
+        ]
     },
 ];
 
