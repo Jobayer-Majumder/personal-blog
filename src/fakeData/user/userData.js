@@ -1,4 +1,4 @@
-export const userData = [
+const userData = [
     {
         id: 1,
         email: 'blogger@gmail.com',
@@ -16,3 +16,4 @@ export const userData = [
         type: 'commenter'
     }
 ];
+export default userData;

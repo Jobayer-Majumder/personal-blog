@@ -1,13 +1,14 @@
 import React from 'react';
-import LoginUser from '../components/LoginUser/LoginUser';
+import BlogDetails from '../components/BlogDetails/BlogDetails'
 import Header from '../components/Header/Header'
-const Login = () => {
+const BlogData = () => {
+    
     return (
         <div>
             <Header></Header>
-            <LoginUser></LoginUser>
+            <BlogDetails></BlogDetails>
         </div>
     );
 };
 
-export default Login;
+export default BlogData;
