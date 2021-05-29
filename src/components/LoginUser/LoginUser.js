@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import userData from '../../fakeData/user/userData';
+
 import './LoginUser.css';
 
-const Login = () => {
+const LoginUser = () => {
 
 
     console.log(userData);
@@ -45,15 +46,15 @@ const Login = () => {
     return (
 
 
-
-        <div class="container">
-            <div class="card">
+        <div class="Logincontainer">
+            <div class="logincard">
                 <h1 class="card-title">Hello Again!</h1>
                 <small class="card-subtitle">Enter your credentials and get access</small>
-                <form class="card-form" onSubmit={handleSubmit}>
-                    <label for="username">Email</label>
+                <form onSubmit={handleSubmit} class="card-form">
+                    <label for="username">Username</label>
                     <div class="card-input-container username">
-                        <input onBlur={handleBlur} type="text" placeholder="Enter your Email" id="email" />
+                        <input onBlur={handleBlur} type="text" placeholder="Enter your username" id="email" />
+
                     </div>
                     <label for="password">Password</label>
                     <div class="card-input-container password">
@@ -65,7 +66,8 @@ const Login = () => {
             </div>
         </div>
 
+
     );
 };
 
-export default Login;
+export default LoginUser;
