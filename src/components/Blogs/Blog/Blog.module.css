@@ -1,0 +1,20 @@
+.borderNone{
+    border: none;
+    background: none;
+    overflow: hidden;
+}
+.cardImg{
+    transition: 0.5s linear;
+    display: block;
+    
+}
+.cardImg:hover{
+    transform: scale(1.1);
+}
+.likeBtn{
+    /* color: white; */
+    /* background-image: linear-gradient(to right,#FF5973, #FF9E86); */
+    border: none;
+    padding: 6px 20px;
+    border-radius: 8px;
+}

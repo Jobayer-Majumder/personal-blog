@@ -1,24 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
+import { Suspense, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import routes from "./routes/routes";
+import { useDispatch } from 'react-redux';
+import { isLoggedIn } from './store/actions/UserActions';
+import AuthRedirectRoute from './routes/AuthRedirectRoute';
+import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
+
+const Loading = () => {
+  return (
+    <h1>Loading.</h1>
+  )
+}
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(isLoggedIn())
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Router>
+        <Switch>
+
+          {
+            routes.map((route, i) => {
+              return route.authentication === "restricted" ? (
+                <AuthRedirectRoute
+                  key={i}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              ) : route.authentication === "private" ? (
+                <PrivateRoute
+                  key={i}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                ></PrivateRoute>
+              ) : (
+                    <Route
+                      key={i}
+                      path={route.path}
+                      exact={route.exact}
+                      component={route.component}
+                    ></Route>
+                  )
+            })
+          }
+
+        </Switch>
+      </Router>
+    </Suspense >
   );
 }
 
