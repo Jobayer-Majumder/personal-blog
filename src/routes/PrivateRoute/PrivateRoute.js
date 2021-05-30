@@ -4,13 +4,16 @@ import { Redirect, Route } from 'react-router-dom';
 
 const PrivateRoute = ({ children, ...rest }) => {
 
+    console.log(rest);
+
     const user = useSelector(state => state.user.user);
 
     return (
+
         <Route
             {...rest}
             render={({ location }) =>
-                user.email ? (
+                user?.email ? (
                     children
                 ) : (
                         <Redirect
@@ -22,7 +25,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                     )
             }
         />
-    );
+    )
 };
 
 export default PrivateRoute;
