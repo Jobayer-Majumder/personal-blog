@@ -29,10 +29,10 @@ const Blog = ({ blog, view }) => {
                             <h6>{author}</h6>
                             {/* <h6>{new Date()}</h6> */}
                         </div>
-                        <Link to={`/blog/${id}`}><h4 className="card-title">{title}</h4></Link>
+                        <Link to={`/blog/${id}`}><h5 className="card-title">{title}</h5></Link>
                         <p className="card-text">{desc}</p>
                     </div>
-                    <div className={`card-footer d-flex justify-content-around p-3 ${styles.borderNone}`}>
+                    <div className={`card-footer d-flex justify-content-around py-4 ${styles.borderNone}`}>
                         <div className="like">
                             <button onClick={() => handleLikeBtn(id)} title='Like' className={`${styles.likeBtn} me-2`}>
                                 <GrLike className='fs-4' />

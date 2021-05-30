@@ -14,7 +14,7 @@ export const userReducers = (state = initialState, action) => {
                 return { ...state, user: action.payload };
 
             }
-
+        break
         default:
             return state;
     }

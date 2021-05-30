@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import blogsData from '../../../fakeData/blogs/blogsData';
 import { BsGrid } from 'react-icons/bs';
 import { ImList2 } from 'react-icons/im';
 import styles from './Blogs.module.css';
