@@ -24,14 +24,15 @@ const routes = [
         path: '/login',
         exact: true,
         component: Login,
-        authentication: false
+        authentication: 'restricted',
+        // restricted: true
     },
     {
         name: 'Post',
         path: '/blog/:id',
         exact: true,
         component: BlogDetails,
-        authentication: false
+        authentication: "private"
     },
 ];
 

@@ -18,19 +18,21 @@ const blogReducers = (state = initialState, action) => {
         }
 
         case actions.TOOGLE_LIKE_BTN: {
-            const filteredBlog = blogsData?.find(blog => blog?.id === parseInt(action.payload.blogId));
+            const filteredBlog = blogsData?.findIndex(blog => {
+                action.payload.userId = 1;
+                if (blog.id === parseInt(action.payload.blogId)) {
+                    if (blog.like.includes(action.payload.userId)) {
+                        const index = blog.like.indexOf(action.payload.userId);
+                        if (index > -1) {
+                            blog.like.splice(index, 1);
+                        }
+                    } else {
+                        blog.like.push(action.payload.userId);
+                    }
+                }
+            });
 
-            const index = filteredBlog?.like.findIndex(singleLyk => singleLyk === parseInt(action.payload.id));
-
-            if (index !== -1) filteredBlog?.like?.splice(index, 1);
-            if (index === -1) filteredBlog?.like?.push(action.payload.id);
-
-            console.log(state);
-
-            // if (filteredBlog.like.includes(action.payload.id)) {
-            //     filteredBlog.like.splice()
-            // }
-            return state;
+            return [...state];
         }
 
         default:
