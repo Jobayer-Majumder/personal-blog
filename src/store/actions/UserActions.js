@@ -22,4 +22,5 @@ export const isLoggedIn = () => {
         type: IS_LOGGED_IN,
         payload: data
     }
+
 }

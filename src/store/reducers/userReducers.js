@@ -1,7 +1,7 @@
 import * as actions from '../actions/UserActions';
 
 const initialState = {
-    user: null
+    user: {}
 };
 
 export const userReducers = (state = initialState, action) => {
@@ -10,11 +10,10 @@ export const userReducers = (state = initialState, action) => {
             return { ...state, user: action.payload };
 
         case actions.IS_LOGGED_IN:
-            if (action.payload) {
-                return { ...state, user: action.payload };
-
-            }
-        break
+            // if (action.payload) {
+            return { ...state, user: action.payload };
+            // }
+            break
         default:
             return state;
     }
