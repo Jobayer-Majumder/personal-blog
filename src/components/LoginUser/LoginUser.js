@@ -9,28 +9,11 @@ const LoginUser = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const user = useSelector(state => state.user.user);
     const dispatch = useDispatch();
-    const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
 
     const onSubmit = async (data) => {
-        // const res = await login();
-
-        // console.log('dispatch', user);
-
         dispatch(userLogin(data));
-
-        // dispatch(userLogin(data)
-        //     .then(res => console.log(res))
-
-        if (user.email) {
-            history.replace(from);
-        }
-    }
-
-    const login = (data) => {
-        return dispatch(userLogin(data));
-        console.log('login', user);
     }
 
     return (

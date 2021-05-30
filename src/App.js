@@ -9,9 +9,7 @@ import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
 
 const Loading = () => {
   return (
-    <div class="spinner-border text-secondary position-absolute top-50 end-50" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
+    <h1>Loading.</h1>
   )
 }
 
@@ -42,7 +40,8 @@ function App() {
                   key={i}
                   path={route.path}
                   exact={route.exact}
-                >{route.component}</PrivateRoute>
+                  component={route.component}
+                ></PrivateRoute>
               ) : (
                     <Route
                       key={i}
