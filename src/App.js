@@ -7,7 +7,9 @@ import { isLoggedIn } from './store/actions/UserActions';
 
 const Loading = () => {
   return (
-    <h1>Loading.</h1>
+    <div class="spinner-border text-secondary position-absolute top-50 end-50" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   )
 }
 

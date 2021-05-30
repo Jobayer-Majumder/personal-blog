@@ -10,7 +10,7 @@ import './BlogDetails.css'
 const BlogDetails = () => {
 
     const { id } = useParams();
-    const blog = blogsData.find(blog => blog?.id == id);
+    const blog = blogsData.find(blog => blog?.id === parseInt(id));
     const { title, img, desc, comments } = blog;
     const { register, handleSubmit, formState: { errors } } = useForm();
     const user = useSelector(state => state.user.user);
